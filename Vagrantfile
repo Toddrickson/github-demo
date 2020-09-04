@@ -24,7 +24,33 @@ Vagrant.configure(2) do |config|
     viserion4.vm.hostname = "viserion4"
     viserion4.vm.network :private_network, ip: "192.168.33.14"
     viserion4.vm.provision :shell, path: "python.sh"
+  end
+  config.vm.define  "snipeuno", primary: true do |snipeuno|
+    snipeuno.vm.box = "centos/7""
+    snipeuno.vm.hostname = "snipeuno"
+    snipeuno.vm.network :private_network, ip: "192.168.33.16"
+    snipeuno.vm.provision :shell, path: "python.sh"
+  end
+  config.vm.define  "tigertone" do |tigertone|
+    tigertone.vm.box = "centos/7"
+    tigertone.vm.hostname = "tigertone""
+    tigertone.vm.network :private_network, ip: "192.168.33.15"
+    tigertone.vm.provision :shell, path: "python.sh"
+  end
+  config.vm.define  "solitaire" do |solitaire|
+    solitaire.vm.box = "centos/7"
+    solitaire.vm.hostname = "solitairee"
+    solitaire.vm.network :private_network, ip: "192.168.33.17i"
+    solitaire.vm.provision :shell, path: "python.sh"
+  end
+  config.vm.define  "blackbird" do |blackbird|
+    blackbird.vm.box = "centos/7"
+    blackbird.vm.hostname = "blackbird"
+    blackbird.vm.network :private_network, ip: "192.168.33.16"
+    blackbird.vm.provision :shell, path: "python.sh"
+  end
 
+  end
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
